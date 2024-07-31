@@ -2,6 +2,7 @@ import express from 'express'
 import 'dotenv/config'
 import mongoose from 'mongoose'
 import cors from 'cors'
+
 export const app = express()
 
 const PORT = process.env.PORT || 3000
