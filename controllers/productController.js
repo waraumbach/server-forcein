@@ -3,6 +3,23 @@ import ProductModel from "../models/productModel.js";
 import mongoose from "mongoose";
 
 
+const getProductSearchSuggestions = async (req, res) => {
+    try {
+        const {productName} = req.query
+        console.log(productName)
+        const suggestions = await ProductModel.find(
+            { "name": {"$regex": productName, "$options": "i"}},
+            "name"
+        )
+
+        return res.status(200).json(suggestions)
+    }
+    catch (err) {
+        console.error('Internal server error 🔴', err)
+        res.status(500).json({ error: `${err.message} 🔴` })
+    }
+}
+
 const getProducts = async (req, res) => {
     try {
         const products = await ProductModel.find()
@@ -71,6 +88,33 @@ const createProduct = async (req, res) => {
     }
 }
 
+const getCategory = async (req, res) => {
+    try {
+        const categories = await CategoryModel.find()
+        if (categories.length < 1) {
+            return res.status(404).json({ error: 'No products found' })
+        }
+
+        return res.status(200).json(categories)
+    }
+    catch (err) {
+        console.error('Internal server error 🔴', err)
+        res.status(500).json({ error: `${err.message} 🔴` })
+    }
+}
+
+const createCategory = async (req, res) => {
+    const { name } = req.body
+    try {
+        const newProduct = await CategoryModel.create({ name })
+        return res.status(201).json(newProduct)
+    }
+    catch (err) {
+        console.error('Internal server error 🔴', err)
+        res.status(500).json({ error: `${err.message} 🔴` })
+    }
+}
+
 const createProducts = async (req, res) => {
     try {
         const products = await ProductModel.create(req.body)
@@ -114,4 +158,4 @@ const deleteAllProducts = async (req, res) => {
 
 
 
-export { getProducts, createProduct, getProductByName, getProductsByCategory, getProductById, deleteAllProducts, createProducts }
+export { getProducts, createProduct, getProductByName, getProductsByCategory, getProductById, deleteAllProducts, createProducts, getCategory, createCategory, getProductSearchSuggestions }

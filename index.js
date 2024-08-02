@@ -2,6 +2,7 @@ import express from 'express'
 import 'dotenv/config'
 import mongoose from 'mongoose'
 import cors from 'cors'
+import productRouter from './routes/productRoute.js'
 
 export const app = express()
 
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
     res.send('Welcome to my e-commerce API')
 })
 
+app.use('/', productRouter)
 
 mongoose.connect(MONGO_URI)
     .then(() => app.listen(PORT , () => console.log(`Server is running on port ${PORT} 🟢`)))

@@ -28,6 +28,7 @@ const product = new Schema({
     }]
 })
 
+product.index({name: 'text'})
 
 const ProductModel = mongoose.model('Product', product)
 
