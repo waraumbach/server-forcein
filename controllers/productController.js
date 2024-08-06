@@ -24,11 +24,21 @@ const searchProductsByName = async (req, res) => {
     try {
         const {productName} = req.query
         
-        const products = await ProductModel.find(
-            { "$text": {"$search": productName}},
+        const product = await ProductModel.find(
+            { "name": {"$regex": productName, "$options": "i"}},
         )
 
-        return res.status(200).json(products)
+        if (product.length === 0) {
+            const products = await ProductModel.find(
+                { "$text": {"$search": decodeURIComponent(productName)}},
+            )
+    
+            return res.status(200).json(products)
+        }
+        else {
+            return res.status(200).json(product)
+        }
+
     }
     catch (err) {
         console.error('Internal server error 🔴', err)
