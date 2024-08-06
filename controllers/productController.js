@@ -6,13 +6,29 @@ import mongoose from "mongoose";
 const getProductSearchSuggestions = async (req, res) => {
     try {
         const {productName} = req.query
-        console.log(productName)
+        
         const suggestions = await ProductModel.find(
             { "name": {"$regex": productName, "$options": "i"}},
             "name"
         )
 
         return res.status(200).json(suggestions)
+    }
+    catch (err) {
+        console.error('Internal server error 🔴', err)
+        res.status(500).json({ error: `${err.message} 🔴` })
+    }
+}
+
+const searchProductsByName = async (req, res) => {
+    try {
+        const {productName} = req.query
+        
+        const products = await ProductModel.find(
+            { "$text": {"$search": productName}},
+        )
+
+        return res.status(200).json(products)
     }
     catch (err) {
         console.error('Internal server error 🔴', err)
@@ -158,4 +174,4 @@ const deleteAllProducts = async (req, res) => {
 
 
 
-export { getProducts, createProduct, getProductByName, getProductsByCategory, getProductById, deleteAllProducts, createProducts, getCategory, createCategory, getProductSearchSuggestions }
+export { getProducts, createProduct, getProductByName, getProductsByCategory, getProductById, deleteAllProducts, createProducts, getCategory, createCategory, getProductSearchSuggestions, searchProductsByName }

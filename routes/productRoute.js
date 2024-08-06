@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { getProducts, getProductById, getProductByName, getProductsByCategory, createProduct, deleteAllProducts, createProducts, createCategory, getCategory, getProductSearchSuggestions } from '../controllers/productController.js'
+import { getProducts, getProductById, getProductByName, getProductsByCategory, createProduct, deleteAllProducts, createProducts, createCategory, getCategory, getProductSearchSuggestions, searchProductsByName } from '../controllers/productController.js'
 
 const productRouter = Router()
 
@@ -8,6 +8,8 @@ const productRouter = Router()
 productRouter.get('/products', getProducts) // It get all the products
 
 productRouter.get('/products/suggestions', getProductSearchSuggestions)
+
+productRouter.get('/products/search', searchProductsByName)
 
 productRouter.get('/products/:productID', getProductById) // It get the product by its ID
 
