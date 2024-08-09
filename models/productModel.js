@@ -1,4 +1,5 @@
-import mongoose, { Schema } from "mongoose";
+import { Schema } from "mongoose";
+import mongoose from "mongoose";
 
 
 const product = new Schema({
@@ -21,6 +22,35 @@ const product = new Schema({
     images : [{
         type : String,
     }],
+    
+    categoryId : [{
+        type : Schema.Types.ObjectId, 
+        ref : 'Category', 
+        required : true
+    }]
+})
+
+const newproduct = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    quantity: {
+        type: Number,
+        required: true
+    },
+    images : [{
+        type : String,
+    }],
+    
     categoryId : [{
         type : Schema.Types.ObjectId, 
         ref : 'Category', 
@@ -30,6 +60,7 @@ const product = new Schema({
 
 product.index({name: 'text'})
 
-const ProductModel = mongoose.model('Product', product)
+
+const ProductModel = mongoose.model('Product', newproduct)
 
 export default ProductModel

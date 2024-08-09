@@ -1,11 +1,16 @@
-import mongoose, { Schema } from "mongoose";
+import {Schema} from 'mongoose'
+import mongoose from 'mongoose'
 
 
 const category = new Schema({
-    name: {
-        type: String,
-        required: true
+    name : {
+        type : String,
+        required : true
     },
+    description : {
+        type : String,
+        required : true
+    }  
 })
 
 
