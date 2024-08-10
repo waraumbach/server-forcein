@@ -26,12 +26,12 @@ const searchProductsByName = async (req, res) => {
         
         const product = await ProductModel.find(
             { "name": {"$regex": productName, "$options": "i"}},
-        )
+        ).populate('categoryId')
 
         if (product.length === 0) {
             const products = await ProductModel.find(
                 { "$text": {"$search": decodeURIComponent(productName)}},
-            )
+            ).populate('categoryId')
     
             return res.status(200).json(products)
         }
@@ -48,7 +48,7 @@ const searchProductsByName = async (req, res) => {
 
 const getProducts = async (req, res) => {
     try {
-        const products = await ProductModel.find()
+        const products = await ProductModel.find().populate('categoryId')
         if (products.length < 1) {
             return res.status(404).json({ error: 'No products found' })
         }
@@ -70,7 +70,7 @@ const getProductById = async (req, res) => {
         }
 
         // We search in the ProductModel where we have an id that match the req.params.productID that we destructured before
-        const product = await ProductModel.findById(productID)
+        const product = await ProductModel.findById(productID).populate('categoryId')
         // If we dont find any id that match productID we return a 404 status code with an error message : Product not found
         if (!product) {
             return res.status(404).json({ error: 'Product not found' })
