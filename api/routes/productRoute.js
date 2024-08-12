@@ -31,7 +31,7 @@ productRouter.post('/category', createCategory)
 
 productRouter.delete('/products', deleteAllProducts) // It delete all the products
 
-productRouter.post('/payment', createPayment) // It delete all the products
+productRouter.post('/payment', createPayment)
 
 
 export default productRouter
