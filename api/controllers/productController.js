@@ -117,6 +117,29 @@ const createProduct = async (req, res) => {
   }
 };
 
+const updateProduct = async (req, res) => {
+  const { id } = req.params;
+  const { name, price, description, quantity } = req.body;
+
+  try {
+    const update = { name: name, price: price, description: description, quantity: quantity }
+    const updatedRows = await ProductModel.findOneAndUpdate(
+      { _id: id},
+      update,
+      { new: true}
+    );
+
+    if (updatedRows === 0) {
+      return res.status(404).json({ error: "Product not found" });
+    }
+
+    return res.status(200).json(updatedRows);
+  } catch (err) {
+    console.error("Internal server error 🔴", err);
+    res.status(500).json({ error: `${err.message} 🔴` });
+  }
+};
+
 const getCategory = async (req, res) => {
   try {
     const categories = await CategoryModel.find();
@@ -222,5 +245,6 @@ export {
   getProductSearchSuggestions,
   searchProductsByName,
   createPayment,
-  deleteProduct
+  deleteProduct,
+  updateProduct
 };
