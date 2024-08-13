@@ -13,15 +13,44 @@ const registerUser = async (req, res) => {
         }
 
         // Series of characters, made to add complexity to the password
-        const salt = await bcrypt.genSaltSync(10)
+        const salt = bcrypt.genSaltSync(10)
         // We hash the password provided by the user and we add to that the salt
-        const hashedPassword = await bcrypt.hashSync(password, salt)
+        const hashedPassword = bcrypt.hashSync(password, salt)
 
         // We create our user, with the email and the password that has been hashed
-        const user = await new User({
+        const user = new User({
             email,
             password: hashedPassword,
-           
+        })
+        await user.save()
+        return res.status(201).json({ message: 'User registred successfully' })
+    }
+    catch (err) {
+        console.error('Internal server error 🔴', err)
+        res.status(500).json({ error: `${err.message} 🔴` })
+    }
+}
+
+const registerAdminUser = async (req, res) => {
+    // We are destructuring the email and the password from the req.body
+    const { email, password } = req.body
+    try {
+        // We check in our database if we have an email that match the req.body.email, the one provided by the user
+        const emailVerification = await User.findOne({ email })
+        if (emailVerification) {
+            return res.status(404).json({ error: 'Email already taken' })
+        }
+
+        // Series of characters, made to add complexity to the password
+        const salt = bcrypt.genSaltSync(10)
+        // We hash the password provided by the user and we add to that the salt
+        const hashedPassword = bcrypt.hashSync(password, salt)
+
+        // We create our user, with the email and the password that has been hashed
+        const user = new User({
+            email,
+            password: hashedPassword,
+            isAdmin: true
         })
         await user.save()
         return res.status(201).json({ message: 'User registred successfully' })
@@ -47,7 +76,7 @@ const loginUser = async (req, res) => {
         
         const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, process.env.JWT_SECRET)
         await User.findByIdAndUpdate(user._id, {token})
-        res.json({ token : token, message : `Welcome ${user.email}` })
+        res.json({ token : token, message : `Welcome ${user.email}`, isAdmin : user.isAdmin })
     }
 
     catch (err) {
@@ -72,4 +101,4 @@ const logoutUser = async (req, res) => {
 }
 
 
-export { registerUser, loginUser, logoutUser }
+export { registerUser, loginUser, logoutUser, registerAdminUser }
