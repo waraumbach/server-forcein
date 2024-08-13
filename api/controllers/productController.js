@@ -170,6 +170,18 @@ const getProductsByCategory = async (req, res) => {
   }
 };
 
+const deleteProduct = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const deleteProducts = await ProductModel.deleteOne({ _id: id});
+    return res.status(202).json(deleteProducts);
+  } catch (err) {
+    console.error("Internal server error 🔴", err);
+    res.status(500).json({ error: `${err.message} 🔴` });
+  }
+};
+
 const deleteAllProducts = async (req, res) => {
   try {
     const deleteProducts = await ProductModel.deleteMany();
@@ -209,5 +221,6 @@ export {
   createCategory,
   getProductSearchSuggestions,
   searchProductsByName,
-  createPayment
+  createPayment,
+  deleteProduct
 };

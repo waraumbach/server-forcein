@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { getProducts, getProductById, getProductByName, getProductsByCategory, createProduct, deleteAllProducts, createProducts, createCategory, getCategory, getProductSearchSuggestions, searchProductsByName, createPayment } from '../controllers/productController.js'
+import { getProducts, getProductById, getProductByName, getProductsByCategory, createProduct, deleteAllProducts, createProducts, createCategory, getCategory, getProductSearchSuggestions, searchProductsByName, createPayment, deleteProduct } from '../controllers/productController.js'
 
 const productRouter = Router()
 
@@ -30,6 +30,8 @@ productRouter.get('/category', getCategory)
 productRouter.post('/category', createCategory)
 
 productRouter.delete('/products', deleteAllProducts) // It delete all the products
+
+productRouter.delete('/products/:id', deleteProduct) // It delete all the products
 
 productRouter.post('/payment', createPayment)
 
