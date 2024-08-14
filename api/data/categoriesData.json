@@ -1,42 +1,17 @@
 [
     {
+        "_id": "64d5f7e1f3e8b2d2f4c54c8f",
         "name": "Skin Care",
         "description": "Products designed to maintain and improve skin health."
     },
     {
+        "_id": "64d5f7e1f3e8b2d2f4c54c90",
         "name": "Hair Care",
         "description": "Products for cleansing, conditioning, and styling hair."
     },
     {
+        "_id": "64d5f7e1f3e8b2d2f4c54c91",
         "name": "Body Care",
         "description": "Products for overall body hygiene and skincare."
-    },
-    {
-        "name": "Makeup",
-        "description": "Cosmetic products used to enhance or alter the appearance."
-    },
-    {
-        "name": "Fragrances",
-        "description": "Products that provide pleasant scents and aromas."
-    },
-    {
-        "name": "Men's Grooming",
-        "description": "Products specifically designed for men’s personal care and grooming."
-    },
-    {
-        "name": "Oral Care",
-        "description": "Products for maintaining oral hygiene, like toothpaste and mouthwash."
-    },
-    {
-        "name": "Nail Care",
-        "description": "Products for maintaining and decorating nails."
-    },
-    {
-        "name": "Health Supplements",
-        "description": "Products designed to support overall health and wellness."
-    },
-    {
-        "name": "Personal Hygiene",
-        "description": "Products used for everyday cleanliness and personal care."
     }
 ]

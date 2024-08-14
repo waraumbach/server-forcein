@@ -29,6 +29,11 @@ app.use(cors(corsOptions))
 
 app.use('/api',authRouter,categoryRouter,productRouter, userRouter, orderRouter)
 
+app.use((err, req, res, next) => {
+  console.error(err.stack); // Log the error stack
+  res.status(500).send('Something broke!');
+});
+
 //shows on localhost
 app.get('/',  (req, res) => {
     res.send('Welcome to my e-commerce API')
@@ -40,4 +45,4 @@ mongoose.connect(MONGO_URI)
     .then(() => app.listen(PORT , () => console.log(`Server is running on port ${PORT} 🟢`)))
     .catch(err => console.error(`${err} 🔴`))
 
-module.exports = app;
+// module.exports = app;

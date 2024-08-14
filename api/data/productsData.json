@@ -1,0 +1,374 @@
+[
+    {
+        "name": "Hydrating Facial Serum",
+        "price": 29.99,
+        "description": "A serum that deeply hydrates and plumps the skin.",
+        "quantity": 100,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c8f"
+        ]
+    },
+    {
+        "name": "Anti-Aging Cream",
+        "price": 49.99,
+        "description": "Cream that helps reduce the appearance of wrinkles.",
+        "quantity": 50,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c8f"
+        ]
+    },
+    {
+        "name": "Brightening Vitamin C Serum",
+        "price": 34.99,
+        "description": "Serum that brightens and evens out skin tone.",
+        "quantity": 80,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c8f"
+        ]
+    },
+    {
+        "name": "Revitalizing Eye Cream",
+        "price": 39.99,
+        "description": "Cream that reduces puffiness and dark circles around the eyes.",
+        "quantity": 70,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c8f"
+        ]
+    },
+    {
+        "name": "Deep Cleansing Face Wash",
+        "price": 19.99,
+        "description": "Face wash that removes impurities and excess oil.",
+        "quantity": 150,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c8f"
+        ]
+    },
+    {
+        "name": "Soothing Aloe Vera Gel",
+        "price": 24.99,
+        "description": "Gel that soothes and calms irritated skin.",
+        "quantity": 90,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c8f"
+        ]
+    },
+    {
+        "name": "Nourishing Night Cream",
+        "price": 44.99,
+        "description": "Night cream that deeply nourishes and repairs skin while you sleep.",
+        "quantity": 60,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c8f"
+        ]
+    },
+    {
+        "name": "Gentle Exfoliating Scrub",
+        "price": 27.99,
+        "description": "Scrub that gently exfoliates dead skin cells and smooths the skin.",
+        "quantity": 110,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c8f"
+        ]
+    },
+    {
+        "name": "Ultra Hydrating Face Mask",
+        "price": 32.99,
+        "description": "Face mask that provides intense hydration and rejuvenation.",
+        "quantity": 85,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c8f"
+        ]
+    },
+    {
+        "name": "Refreshing Toner",
+        "price": 22.99,
+        "description": "Toner that balances skin's pH and refreshes the complexion.",
+        "quantity": 120,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c8f"
+        ]
+    },
+    {
+        "name": "Moisturizing Shampoo",
+        "price": 18.99,
+        "description": "Shampoo that deeply moisturizes and nourishes dry hair.",
+        "quantity": 150,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c90"
+        ]
+    },
+    {
+        "name": "Revitalizing Conditioner",
+        "price": 20.99,
+        "description": "Conditioner that revitalizes and strengthens hair.",
+        "quantity": 120,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c90"
+        ]
+    },
+    {
+        "name": "Volume Boosting Mousse",
+        "price": 15.99,
+        "description": "Mousse that adds volume and body to fine hair.",
+        "quantity": 80,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c90"
+        ]
+    },
+    {
+        "name": "Nourishing Hair Mask",
+        "price": 22.99,
+        "description": "Intense hair mask that deeply nourishes and repairs damaged hair.",
+        "quantity": 90,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c90"
+        ]
+    },
+    {
+        "name": "Smoothing Hair Serum",
+        "price": 24.99,
+        "description": "Serum that smooths frizz and adds shine to hair.",
+        "quantity": 100,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c90"
+        ]
+    },
+    {
+        "name": "Dry Shampoo Spray",
+        "price": 14.99,
+        "description": "Dry shampoo that refreshes hair and adds volume without water.",
+        "quantity": 130,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c90"
+        ]
+    },
+    {
+        "name": "Leave-In Conditioner",
+        "price": 19.99,
+        "description": "Conditioner that detangles and protects hair without rinsing.",
+        "quantity": 110,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c90"
+        ]
+    },
+    {
+        "name": "Color Protecting Shampoo",
+        "price": 21.99,
+        "description": "Shampoo designed to protect and extend the life of color-treated hair.",
+        "quantity": 90,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c90"
+        ]
+    },
+    {
+        "name": "Hair Strengthening Spray",
+        "price": 23.99,
+        "description": "Spray that strengthens hair and reduces breakage.",
+        "quantity": 85,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c90"
+        ]
+    },
+    {
+        "name": "Shine Enhancing Shampoo",
+        "price": 17.99,
+        "description": "Shampoo that enhances shine and smoothness of hair.",
+        "quantity": 140,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c90"
+        ]
+    },
+    {
+        "name": "Exfoliating Body Scrub",
+        "price": 25.99,
+        "description": "Body scrub that exfoliates dead skin cells and smooths the skin.",
+        "quantity": 100,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c91"
+        ]
+    },
+    {
+        "name": "Moisturizing Body Lotion",
+        "price": 21.99,
+        "description": "Lotion that deeply moisturizes and nourishes the skin.",
+        "quantity": 150,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c91"
+        ]
+    },
+    {
+        "name": "Gentle Body Wash",
+        "price": 18.99,
+        "description": "Body wash that cleanses and hydrates the skin without stripping moisture.",
+        "quantity": 120,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c91"
+        ]
+    },
+    {
+        "name": "Refreshing Body Mist",
+        "price": 15.99,
+        "description": "Body mist that provides a refreshing burst of fragrance and hydration.",
+        "quantity": 80,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c91"
+        ]
+    },
+    {
+        "name": "Soothing Body Cream",
+        "price": 27.99,
+        "description": "Rich body cream that soothes and nourishes dry skin.",
+        "quantity": 90,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c91"
+        ]
+    },
+    {
+        "name": "Hydrating Body Oil",
+        "price": 30.99,
+        "description": "Body oil that provides deep hydration and a glowing finish.",
+        "quantity": 70,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c91"
+        ]
+    },
+    {
+        "name": "Anti-Cellulite Cream",
+        "price": 33.99,
+        "description": "Cream formulated to reduce the appearance of cellulite.",
+        "quantity": 60,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c91"
+        ]
+    },
+    {
+        "name": "Invigorating Body Scrub",
+        "price": 23.99,
+        "description": "Body scrub with invigorating ingredients that refreshes and exfoliates.",
+        "quantity": 110,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c91"
+        ]
+    },
+    {
+        "name": "Nourishing Body Balm",
+        "price": 26.99,
+        "description": "Rich body balm that nourishes and repairs dry, cracked skin.",
+        "quantity": 85,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c91"
+        ]
+    },
+    {
+        "name": "Cleansing Body Gel",
+        "price": 17.99,
+        "description": "Gel that gently cleanses the body while maintaining skin’s moisture.",
+        "quantity": 140,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c91"
+        ]
+    },
+    {
+        "name": "Revitalizing Body Wash",
+        "price": 19.99,
+        "description": "Body wash that revitalizes and refreshes the skin.",
+        "quantity": 130,
+        "images": [
+            "/product.jpg"
+        ],
+        "categoryId": [
+            "64d5f7e1f3e8b2d2f4c54c91"
+        ]
+    }
+]
