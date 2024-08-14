@@ -1,5 +1,6 @@
 import { Router } from "express";
 import categoryModel from "../models/categoryModel.js";
+import { createCategories } from "../controllers/categoryController.js";
 
 
 //we create the category Router
@@ -37,6 +38,8 @@ categoryRouter.post('/category', async (req,res ) => {
         res.status(500).json({ error: `${err.message} :red_circle:` })
     }
   })
+
+categoryRouter.post('/categories', createCategories)
 
   export default categoryRouter
 
