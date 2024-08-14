@@ -38,9 +38,6 @@ app.get('/',  (req, res) => {
     res.send('Welcome to my e-commerce API')
 })
 
-app.use('/', productRouter)
-
-
 
 //mongoose connect with MongoDB
 mongoose.connect(MONGO_URI)
