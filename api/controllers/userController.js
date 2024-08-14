@@ -65,7 +65,6 @@ const updateUserAddressByToken = async (req, res) => {
     const { token, address } = req.body
     
     try {
-        console.log("hello", token, address)
         const updatedUser = await User.findOneAndUpdate({ token }, { address }, { new: true })
         if (!updatedUser) {
             return res.status(400).json({ error: 'Please update' })

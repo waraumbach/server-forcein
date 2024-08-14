@@ -5,6 +5,7 @@ import cors from 'cors'
 import authRouter from './routes/authRoute.js'
 import categoryRouter from './routes/categoryRoute.js'
 import productRouter from './routes/productRoute.js'
+import userRouter from './routes/userRoute.js'
 
 export const app = express()
 
@@ -25,7 +26,7 @@ app.use(express.urlencoded({extended : true}))
 app.use(cors(corsOptions))
 
 
-app.use('/api',authRouter,categoryRouter,productRouter)
+app.use('/api',authRouter,categoryRouter,productRouter, userRouter)
 
 app.post('/users', (req,res) =>{
   users.push(req.body)
