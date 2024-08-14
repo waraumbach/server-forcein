@@ -112,6 +112,22 @@ const searchCategoryByName = async (req, res) => {
   }
 };
 
+const getCategorySearchSuggestions = async (req, res) => {
+    try {
+      const { name } = req.query;
+  
+      const suggestions = await CategoryModel.find(
+        { name: { $regex: name, $options: "i" } },
+        "name"
+      );
+  
+      return res.status(200).json(suggestions);
+    } catch (err) {
+      console.error("Internal server error 🔴", err);
+      res.status(500).json({ error: `${err.message} 🔴` });
+    }
+  };
+
 export {
   getCategories,
   getCategoryById,
@@ -119,5 +135,6 @@ export {
   createCategory,
   createCategories,
   deleteAllCategories,
-  searchCategoryByName
+  searchCategoryByName,
+  getCategorySearchSuggestions
 };

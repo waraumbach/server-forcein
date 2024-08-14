@@ -1,6 +1,6 @@
 import { Router } from "express";
 import categoryModel from "../models/categoryModel.js";
-import { createCategories, searchCategoryByName } from "../controllers/categoryController.js";
+import { createCategories, getCategorySearchSuggestions, searchCategoryByName } from "../controllers/categoryController.js";
 
 
 //we create the category Router
@@ -42,6 +42,8 @@ categoryRouter.post('/category', async (req,res ) => {
 categoryRouter.post('/categories', createCategories)
 
 categoryRouter.get('/categories/search', searchCategoryByName)
+
+categoryRouter.get('/categories/suggestions', getCategorySearchSuggestions)
 
 export default categoryRouter
 
