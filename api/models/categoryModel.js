@@ -13,6 +13,7 @@ const category = new Schema({
     }  
 })
 
+category.index({name: 'text'})
 
 const CategoryModel = mongoose.model('Category', category)
 

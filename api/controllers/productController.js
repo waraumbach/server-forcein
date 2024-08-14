@@ -3,7 +3,7 @@ import CategoryModel from "../models/categoryModel.js";
 import ProductModel from "../models/productModel.js";
 import mongoose from "mongoose";
 
-const STRIPE_SECRET = process.env.STRIPE_SECRET
+const STRIPE_SECRET = process.env.STRIPE_SECRET;
 const stripe = new Stripe(STRIPE_SECRET);
 
 const getProductSearchSuggestions = async (req, res) => {
@@ -26,19 +26,11 @@ const searchProductsByName = async (req, res) => {
   try {
     const { productName } = req.query;
 
-    const product = await ProductModel.find({
+    const products = await ProductModel.find({
       name: { $regex: productName, $options: "i" },
     }).populate("categoryId");
 
-    if (product.length === 0) {
-      const products = await ProductModel.find({
-        $text: { $search: decodeURIComponent(productName) },
-      }).populate("categoryId");
-
-      return res.status(200).json(products);
-    } else {
-      return res.status(200).json(product);
-    }
+    return res.status(200).json(products);
   } catch (err) {
     console.error("Internal server error 🔴", err);
     res.status(500).json({ error: `${err.message} 🔴` });
@@ -122,11 +114,16 @@ const updateProduct = async (req, res) => {
   const { name, price, description, quantity } = req.body;
 
   try {
-    const update = { name: name, price: price, description: description, quantity: quantity }
+    const update = {
+      name: name,
+      price: price,
+      description: description,
+      quantity: quantity,
+    };
     const updatedRows = await ProductModel.findOneAndUpdate(
-      { _id: id},
+      { _id: id },
       update,
-      { new: true}
+      { new: true }
     );
 
     if (updatedRows === 0) {
@@ -197,7 +194,7 @@ const deleteProduct = async (req, res) => {
   const { id } = req.params;
 
   try {
-    const deleteProducts = await ProductModel.deleteOne({ _id: id});
+    const deleteProducts = await ProductModel.deleteOne({ _id: id });
     return res.status(202).json(deleteProducts);
   } catch (err) {
     console.error("Internal server error 🔴", err);
@@ -246,5 +243,5 @@ export {
   searchProductsByName,
   createPayment,
   deleteProduct,
-  updateProduct
+  updateProduct,
 };
