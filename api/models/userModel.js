@@ -1,6 +1,6 @@
 import mongoose, {Schema} from 'mongoose'
 
-const userAddressSchema = new Schema({
+export const userAddressSchema = new Schema({
     name : {
         type : String,
         required : false
