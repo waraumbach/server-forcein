@@ -29,10 +29,6 @@ app.use(cors(corsOptions))
 
 app.use('/api',authRouter,categoryRouter,productRouter, userRouter, orderRouter)
 
-app.post('/users', (req,res) =>{
-  users.push(req.body)
-      res.send(req.body)
-  });
 //shows on localhost
 app.get('/',  (req, res) => {
     res.send('Welcome to my e-commerce API')
