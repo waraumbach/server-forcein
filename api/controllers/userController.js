@@ -61,6 +61,23 @@ const updateUser = async (req, res) => {
     }
 }
 
+const updateUserAddressByToken = async (req, res) => {
+    const { token, address } = req.body
+    
+    try {
+        console.log("hello", token, address)
+        const updatedUser = await User.findOneAndUpdate({ token }, { address }, { new: true })
+        if (!updatedUser) {
+            return res.status(400).json({ error: 'Please update' })
+        }
+        return res.status(200).json(updatedUser)
+    }
+    catch (err) {
+        console.error('Internal server error 🔴', err)
+        res.status(500).json({ error: `${err.message} 🔴` })
+    }
+}
+
 const deleteUser = async (req, res) => {
     const {userId} = req.params
     try{
@@ -76,4 +93,4 @@ const deleteUser = async (req, res) => {
     }
 }
 
-export { getAllUsers, getUserByToken, updateUser, getUserByID, deleteUser } 
+export { getAllUsers, getUserByToken, updateUser, getUserByID, deleteUser, updateUserAddressByToken } 
