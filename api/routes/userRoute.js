@@ -10,7 +10,7 @@ userRouter.get('/users/:userId', getUserByID)
 
 userRouter.put('/users/:userId', updateUser)
 
-userRouter.put('/address', updateUserAddressByToken)
+userRouter.post('/address', updateUserAddressByToken)
 
 userRouter.post('/user/token', getUserByToken)
 
