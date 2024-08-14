@@ -2,11 +2,6 @@ import mongoose from "mongoose";
 import CategoryModel from "../models/categoryModel.js";
 
 const getCategories = async (req, res) => {
-  // We want to get all the categories
-  // We use the CategoryModel and we call the find method on it
-  // The find method allows to retreive all the data from the CategoryModel
-  // If there is no categories we send an error message
-  // We also catch the error in the catch(err) and return it
   try {
     const categories = await CategoryModel.find();
     if (categories.length < 1) {
