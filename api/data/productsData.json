@@ -11,18 +11,8 @@
             "64d5f7e1f3e8b2d2f4c54c8f"
         ]
     },
-    {
-        "name": "Anti-Aging Cream",
-        "price": 49.99,
-        "description": "Cream that helps reduce the appearance of wrinkles.",
-        "quantity": 50,
-        "images": [
-            "/product.jpg"
-        ],
-        "categoryId": [
-            "64d5f7e1f3e8b2d2f4c54c8f"
-        ]
-    },
+   
+    ,
     {
         "name": "Brightening Vitamin C Serum",
         "price": 34.99,
